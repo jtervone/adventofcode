@@ -18,7 +18,7 @@ final class Day01Test extends TestCase {
    * @return void
    */
   public function setUp() : void {
-    list($col1, $col2) = Day01::readData(__DIR__ . "/data.txt");
+    list($col1, $col2) = Day01::readData(__DIR__ . "/data/input-01.txt");
 
     $this->col1 = $col1;
     $this->col2 = $col2;

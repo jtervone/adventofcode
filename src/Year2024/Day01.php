@@ -6,7 +6,7 @@ use Adventofcode\Config;
 
 class Day01 {
   public static function solve1stHalf() {
-    $filename = Config::$rootPath . "/data/2024/01/data.txt";
+    $filename = Config::$rootPath . "/data/2024/input-01.txt";
 
     list($col1, $col2) = self::readData($filename);
 
@@ -20,7 +20,7 @@ class Day01 {
   }
 
   public static function solve2ndHalf() {
-    $filename = Config::$rootPath . "/data/2024/01/data.txt";
+    $filename = Config::$rootPath . "/data/2024/input-01.txt";
 
     list($col1, $col2) = self::readData($filename);
 
