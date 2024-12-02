@@ -6,6 +6,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 
+use Adventofcode\Config;
 use Adventofcode\Year2024\Day02;
 
 final class Day02Test extends TestCase {
@@ -17,7 +18,7 @@ final class Day02Test extends TestCase {
    * @return void
    */
   public function setUp() : void {
-    $this->data = Day02::readData(__DIR__ . "/data/input-02.txt");
+    $this->data = Day02::readData(Config::$rootPath."/data/2024/input-02.txt");
   }
 
   /**
