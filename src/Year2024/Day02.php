@@ -5,7 +5,12 @@ namespace Adventofcode\Year2024;
 use Adventofcode\Config;
 
 class Day02 {
-  public static function solve1stHalf() {
+  /**
+   * Solve the first half of the day's puzzle.
+   *
+   * @return void
+   */
+  public static function solve1stHalf() : void {
     $validRows = 0;
     $filename = Config::$rootPath . "/data/2024/input-02.txt";
 
@@ -25,7 +30,12 @@ class Day02 {
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
   }
 
-  public static function solve2ndHalf() {
+  /**
+   * Solve the second half of the day's puzzle.
+   *
+   * @return void
+   */
+  public static function solve2ndHalf() : void {
     $validRows = 0;
     $filename = Config::$rootPath . "/data/2024/input-02.txt";
 
@@ -50,7 +60,7 @@ class Day02 {
    *
    * @param array $row The row to validate.
    *
-   * @return bool True if the row is valid, false otherwise.
+   * @return boolean True if the row is valid, false otherwise.
    */
   public static function validateRow(array $row) : bool {
     $lastNum = null;
@@ -101,7 +111,7 @@ class Day02 {
    *
    * @param array $row The row to validate.
    *
-   * @return bool True if the row is valid, false otherwise.
+   * @return boolean True if the row is valid, false otherwise.
    */
   public static function validateRowDampener(array $row) : bool {
     $valid = self::validateRow($row);

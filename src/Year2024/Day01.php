@@ -5,7 +5,12 @@ namespace Adventofcode\Year2024;
 use Adventofcode\Config;
 
 class Day01 {
-  public static function solve1stHalf() {
+  /**
+   * Solve the first half of the day's puzzle.
+   *
+   * @return void
+   */
+  public static function solve1stHalf() : void {
     $filename = Config::$rootPath . "/data/2024/input-01.txt";
 
     list($col1, $col2) = self::readData($filename);
@@ -19,7 +24,12 @@ class Day01 {
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
   }
 
-  public static function solve2ndHalf() {
+  /**
+   * Solve the second half of the day's puzzle.
+   *
+   * @return void
+   */
+  public static function solve2ndHalf() : void {
     $filename = Config::$rootPath . "/data/2024/input-01.txt";
 
     list($col1, $col2) = self::readData($filename);

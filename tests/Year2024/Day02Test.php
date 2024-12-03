@@ -22,7 +22,7 @@ final class Day02Test extends TestCase {
   }
 
   /**
-   * Test calculateDistance function.
+   * Test validate row function.
    *
    * @return void
    */
@@ -42,6 +42,11 @@ final class Day02Test extends TestCase {
     }
   }
 
+  /**
+   * Test validate row with dampener function.
+   *
+   * @return void
+   */
   public function testValidateRowsWithDampener() : void {
     $valids = [
       true,
