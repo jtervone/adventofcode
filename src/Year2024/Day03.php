@@ -110,13 +110,15 @@ class Day03 {
     do {
       $char = $data[$i] ?? null;
 
-      if (substr($data, $i, 7) === "don't()") {
-        $do = false;
-      } elseif (substr($data, $i, 4) === "do()") {
+      if (!$do && ($char == "d") && (substr($data, $i, 4) === "do()")) {
+        $i += 4;
         $do = true;
+      } elseif ($do && ($char == "d") && (substr($data, $i, 7) === "don't()")) {
+        $i += 7;
+        $do = false;
       }
 
-      if ($do && (substr($data, $i, 4) === "mul(")) {
+      if ($do && ($char == "m") && (substr($data, $i, 4) === "mul(")) {
         $i += 4;
         $numbers = "";
         while ($data[$i] !== null) {
