@@ -15,7 +15,7 @@ class Day06 {
 
     $start = microtime(true);
 
-    $moves = self::calculateMoves1($filename);
+    $moves = self::calculateMoves($filename);
 
     $end = microtime(true);
 
@@ -34,15 +34,22 @@ class Day06 {
 
     $start = microtime(true);
 
-    $moves = self::calculateMoves2($filename);
+    $positions = self::calculateExtraWallPositions($filename);
 
     $end = microtime(true);
     echo "2nd half:\n";
-    echo "- result: {$moves}\n";
+    echo "- result: {$positions}\n";
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
   }
 
-  public static function calculateMoves1($filename) {
+  /**
+   * Calculate the number of moves the guard makes.
+   *
+   * @param string $filename The name of the file to read.
+   *
+   * @return integer The number of moves the guard makes.
+   */
+  public static function calculateMoves($filename) {
     $count = 0;
     $direction = "up";
 
@@ -63,7 +70,14 @@ class Day06 {
     return $count;
   }
 
-  public static function calculateMoves2($filename) {
+  /**
+   * Calculate the number of extra wall positions.
+   *
+   * @param string $filename The name of the file to read.
+   *
+   * @return integer The number of extra wall positions.
+   */
+  public static function calculateExtraWallPositions($filename) {
     list($origMap, $origY, $origX) = self::readData($filename);
 
     $count = 0;

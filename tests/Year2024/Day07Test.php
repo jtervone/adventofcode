@@ -10,6 +10,11 @@ use Adventofcode\Config;
 use Adventofcode\Year2024\Day07;
 
 final class Day07Test extends TestCase {
+  /**
+   * Test the solve1stHalf method of Day07.
+   *
+   * @return void
+   */
   public function test1stHalf() : void {
     // Test input
     $data = Day07::readData(Config::$rootPath."/data/2024/input-07.txt");
@@ -24,6 +29,11 @@ final class Day07Test extends TestCase {
     $this->assertEquals(12940396350192, $result);
   }
 
+  /**
+   * Test the solve2ndHalf method of Day07.
+   *
+   * @return void
+   */
   public function test2ndHalf() : void {
     // Test input
     $data = Day07::readData(Config::$rootPath."/data/2024/input-07.txt");

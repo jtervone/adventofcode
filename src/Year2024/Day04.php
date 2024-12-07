@@ -43,6 +43,13 @@ class Day04 {
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
   }
 
+  /**
+   * Calculate the number of XMAS patterns in the data.
+   *
+   * @param string $filename The name of the file to read.
+   *
+   * @return integer The number of XMAS patterns found.
+   */
   public static function calculateXmases1($filename) : int {
     $count = 0;
     $data = self::readData($filename);
@@ -56,6 +63,13 @@ class Day04 {
     return $count;
   }
 
+  /**
+   * Calculate the number of XMAS patterns in the data.
+   *
+   * @param string $filename The name of the file to read.
+   *
+   * @return integer The number of XMAS patterns found.
+   */
   public static function calculateXmases2($filename) : int {
     $count = 0;
     $data = self::readData($filename);
