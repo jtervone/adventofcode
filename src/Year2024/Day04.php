@@ -14,19 +14,13 @@ class Day04 {
     $filename = Config::$rootPath . "/data/2024/input-04.txt";
 
     $start = microtime(true);
-    $xmasses = 0;
-    $data = self::readData($filename);
 
-    for ($y = 0; $y < count($data); $y++) {
-      for ($x = 0; $x < count($data[$y]); $x++) {
-        $xmasses += self::isInvolvedXmas1($data, $x, $y);
-      }
-    }
+    $result = self::calculateXmases1($filename);
 
     $end = microtime(true);
 
     echo "1st half:\n";
-    echo "- result: {$xmasses}\n";
+    echo "- result: {$result}\n";
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
   }
 
@@ -39,20 +33,40 @@ class Day04 {
     $filename = Config::$rootPath . "/data/2024/input-04.txt";
 
     $start = microtime(true);
-    $xmasses = 0;
-    $data = self::readData($filename);
 
-    for ($y = 0; $y < count($data); $y++) {
-      for ($x = 0; $x < count($data[$y]); $x++) {
-        $xmasses += self::isInvolvedXmas2($data, $x, $y);
-      }
-    }
+    $result = self::calculateXmases2($filename);
 
     $end = microtime(true);
 
     echo "2nd half:\n";
-    echo "- result: {$xmasses}\n";
+    echo "- result: {$result}\n";
     echo "- time: " . (($end - $start) * 100) . "ms\n\n";
+  }
+
+  public static function calculateXmases1($filename) : int {
+    $count = 0;
+    $data = self::readData($filename);
+
+    for ($y = 0; $y < count($data); $y++) {
+      for ($x = 0; $x < count($data[$y]); $x++) {
+        $count += self::isInvolvedXmas1($data, $x, $y);
+      }
+    }
+
+    return $count;
+  }
+
+  public static function calculateXmases2($filename) : int {
+    $count = 0;
+    $data = self::readData($filename);
+
+    for ($y = 0; $y < count($data); $y++) {
+      for ($x = 0; $x < count($data[$y]); $x++) {
+        $count += self::isInvolvedXmas2($data, $x, $y);
+      }
+    }
+
+    return $count;
   }
 
   /**
