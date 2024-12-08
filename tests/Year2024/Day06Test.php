@@ -18,13 +18,13 @@ final class Day06Test extends TestCase {
   public function test1stHalf() : void {
     // Test input
     $filename = Config::$rootPath."/data/2024/input-06.txt";
-    $result = Day06::calculateMoves1($filename);
+    $result = Day06::calculateMoves($filename);
 
     $this->assertEquals(41, $result);
 
     // Real input
     $filename = dirname(Config::$rootPath)."/data/2024/input-06.txt";
-    $result = Day06::calculateMoves1($filename);
+    $result = Day06::calculateMoves($filename);
 
     $this->assertEquals(5145, $result);
   }
@@ -37,13 +37,13 @@ final class Day06Test extends TestCase {
   public function test2ndHalf() : void {
     // Test input
     $filename = Config::$rootPath."/data/2024/input-06.txt";
-    $result = Day06::calculateMoves2($filename);
+    $result = Day06::calculateExtraWallPositions($filename);
 
     $this->assertEquals(6, $result);
 
     // Real input
     $filename = dirname(Config::$rootPath)."/data/2024/input-06.txt";
-    $result = Day06::calculateMoves2($filename);
+    $result = Day06::calculateExtraWallPositions($filename);
 
     $this->assertEquals(1523, $result);
   }
